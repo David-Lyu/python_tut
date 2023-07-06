@@ -55,7 +55,7 @@ def draw(win, targets):
   for target in targets:
     target.draw(win)
 
-def formate_time(secs):
+def format_time(secs):
   milli = math.floor(int(secs * 1000 % 1000) / 100)
   seconds = int(round(secs % 60, 1))
   minutes = int(secs // 60) # Interger divided by 60
@@ -63,7 +63,7 @@ def formate_time(secs):
 
 def draw_score_bar(win, elapsed_time, targets_pressed, misses):
   pygame.draw.rect(win,'grey',(0,0, WIDTH, TOP_BAR_HEIGHT))
-  time_label = LABEL_FONT.render(f"Time: {formate_time(elapsed_time)}",1, "black")
+  time_label = LABEL_FONT.render(f"Time: {format_time(elapsed_time)}",1, "black")
 
   win.blit(time_label,(5,5))
 
@@ -78,7 +78,7 @@ def main():
   clicks = 0
   misses = 0
   start_time = time.time()
-  elapsed_time = time.time() - start_time
+
 
   pygame.time.set_timer(TARGET_EVENT, TARGET_INCREMENT)
 
@@ -86,6 +86,7 @@ def main():
     clock.tick(60)
     click = False
     mouse_pos = pygame.mouse.get_pos()
+    elapsed_time = time.time() - start_time
 
     for event in pygame.event.get():
       if(event.type == pygame.QUIT):
