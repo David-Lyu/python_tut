@@ -36,3 +36,14 @@ tf.random.shuffle(not_shuffled);
 tf.random.shuffle(not_shuffled); #seed = 42 -> same as tf.random.set_seed()
 
 # ex: random_1 vs tf.random.shuffle(not_shuffled)
+
+# Read through TensorFlow doc on random seed generation:
+
+#https://www.tensorflow.org/api_docs/python/tf/random/set_seed
+
+# Output is different everytime
+tf.random.shuffle(not_shuffled, seed=42)
+
+# Add global seed output stays the same read docks #4
+tf.random.set_seed(42)
+tf.random.shuffle(not_shuffled, seed=42)
