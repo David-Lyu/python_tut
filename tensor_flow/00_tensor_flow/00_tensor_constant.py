@@ -59,4 +59,4 @@ print(tensor)
 ## Output: 3
 tensor.ndim
 
-### ALL matrix, vecorts, scalar will be still referenced as tensors
+### ALL matrix, vectors, scalar will be still referenced as tensors
