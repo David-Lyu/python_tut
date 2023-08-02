@@ -20,4 +20,9 @@ print(numpy_A)
 # if 'a' then it is associated with vector
 
 A = tf.constant(numpy_A)
+# Converts into a tensor
 print(A)
+
+# Changes shape to vector
+# The numbers inside the tupal has to equal the elements in the list
+B = tf.constant(numpy_A, shape=(2, 3, 4))
